@@ -26,9 +26,12 @@ public class JpaMain {
             Member member3 = new Member();
             member3.setName("이길동");
             member3.setTeam(team);
+
+            System.out.println("=====em.persist(member) before=====");
             em.persist(member);
             em.persist(member2);
             em.persist(member3);
+            System.out.println("=====em.persist(member) after=====");
 
             //Item 엔티티 생성 및 조회
             Item item = new Item();
@@ -59,6 +62,7 @@ public class JpaMain {
             System.out.println("memberName : " + memberName);
             String teamName = findMember.getTeam().getName();
             System.out.println("teamName : " + teamName);
+
 
 
 

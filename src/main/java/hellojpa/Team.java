@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 public class Team {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TEAM_ID")
     private Long id;
 

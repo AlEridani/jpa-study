@@ -8,6 +8,7 @@
 /dataSources.local.xml
 /dataSources.xml
 
+#빌드 및 설정파일
 /.idea/
 /target/
 *.iml

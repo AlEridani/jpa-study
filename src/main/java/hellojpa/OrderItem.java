@@ -1,8 +1,14 @@
 package hellojpa;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class OrderItem {
 
     @Id @GeneratedValue
@@ -22,43 +28,5 @@ public class OrderItem {
     private int count;
 
 
-    public Order getOrder() {
-        return order;
-    }
 
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getOrderPrice() {
-        return orderPrice;
-    }
-
-    public void setOrderPrice(int orderPrice) {
-        this.orderPrice = orderPrice;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
 }

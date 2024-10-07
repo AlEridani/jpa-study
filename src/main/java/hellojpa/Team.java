@@ -1,10 +1,17 @@
 package hellojpa;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Team {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TEAM_ID")
@@ -12,39 +19,10 @@ public class Team {
 
     private String name;
 
-    @OneToMany(mappedBy = "team")
-    private List<Member> members;
+    @OneToMany
+    @JoinColumn(name = "TEAM_ID")
+    private List<Member> members = new ArrayList<>();
 
-    public List<Member> getMembers() {
-        return members;
-    }
 
-    public void setMembers(List<Member> members) {
-        this.members = members;
-    }
 
-    public Team() {
-
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Team(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }

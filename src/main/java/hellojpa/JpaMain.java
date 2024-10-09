@@ -1,7 +1,9 @@
 package hellojpa;
 
 import jakarta.persistence.*;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class JpaMain {
 
     public static void main(String[] args) {
@@ -13,17 +15,29 @@ public class JpaMain {
         try {
 
 
-            //Member 엔티티 생성
-            Member member = new Member();
-            member.setName("홍길동");
-            member.setAge(20);
-            em.persist(member);
 
-            //Team 엔티티 생성
-            Team team = new Team();
-            team.setName("경영팀");
-            team.getMembers().add(member);
-            em.persist(team);
+//            //Locker 엔티티 생성
+//            Locker locker = new Locker();
+//            em.persist(locker);
+//            locker.setName(locker.getId() + "번 락커");
+//
+//            //Member 엔티티 생성
+//            Member member = new Member();
+//            member.setName("홍길동");
+//            member.setAge(20);
+//            member.setLocker(locker);
+//            em.persist(member);
+
+
+
+
+
+
+//            //Team 엔티티 생성
+//            Team team = new Team();
+//            team.setName("경영팀");
+//            team.getMembers().add(member);
+//            em.persist(team);
 
 
 

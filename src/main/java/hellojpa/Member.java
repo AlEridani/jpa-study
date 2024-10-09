@@ -14,8 +14,10 @@ public class Member {
     private Long id;
     private String name;
     private int age;
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID", insertable=false, updatable=false)
-    private Team  team;
 
+    @ManyToMany
+    @JoinTable(name = "ORDERS",
+            joinColumns = @JoinColumn(name = "MEMBER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "PRODUCT_ID"))
+    private List<Product> products = new ArrayList<>();
 }

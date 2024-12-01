@@ -55,14 +55,19 @@ dependencies {
 	// 개발 도구
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+
 	// 테스트
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-	// Redisson Hibernate 6
 	implementation 'org.redisson:redisson-hibernate-6:3.21.1'
-	// Redisson Core 라이브러리 추가
+
 	implementation 'org.redisson:redisson:3.21.1'
+
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+
 }
 
 tasks.named('test') {

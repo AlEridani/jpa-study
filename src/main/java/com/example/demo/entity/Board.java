@@ -12,8 +12,8 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "board")
 @AllArgsConstructor
+@Table(name = "board")
 @Cacheable
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Board {
@@ -25,16 +25,16 @@ public class Board {
     private String title;
     private String content;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "board_category",
-            joinColumns = @JoinColumn(name = "board_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id")
-    )
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    private Set<Category> categories = new HashSet<>();
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "member_id")
+//    private Member member;
+//
+//    @ManyToMany(fetch = FetchType.LAZY)
+//    @JoinTable(
+//            name = "board_category",
+//            joinColumns = @JoinColumn(name = "board_id"),
+//            inverseJoinColumns = @JoinColumn(name = "category_id")
+//    )
+//    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+//    private Set<Category> categories = new HashSet<>();
 }

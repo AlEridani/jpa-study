@@ -2,19 +2,21 @@ server:
   port: 8091
 
 spring:
+  batch:
+    jdbc:
+      initialize-schema: always
   application:
     name: demo
-
   datasource:
     url: jdbc:mysql://localhost:3307/jpa_study?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: hello
     password: 123
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     show-sql: true
+    open-in-view: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
@@ -22,13 +24,18 @@ spring:
           use_second_level_cache: true
           use_query_cache: true
           region.factory_class: org.redisson.hibernate.RedissonRegionFactory
-
-
+        format_sql: true
   cache:
     type: redis
+  data:
+    redis:
+      host: localhost
+      port: 6379
 
 logging:
   level:
-    org.springframework.cache: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.cache: debug
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: debug
+    org.hibernate.cache.internal: debug
+    org.hibernate.cache.spi: debug

@@ -13,6 +13,12 @@ java {
 	}
 }
 
+//processResources {
+//	from(sourceSets.main.resources.srcDirs) {
+//		include '**/*.yml', '**/*.yaml'
+//	}
+//}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -55,6 +61,8 @@ dependencies {
 
 	// Redisson Hibernate 6
 	implementation 'org.redisson:redisson-hibernate-6:3.21.1'
+	// Redisson Core 라이브러리 추가
+	implementation 'org.redisson:redisson:3.21.1'
 }
 
 tasks.named('test') {

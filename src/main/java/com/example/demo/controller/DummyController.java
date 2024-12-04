@@ -20,4 +20,10 @@ public class DummyController {
     public List<Dummy> getAllDummys(){
         return dummyService.getAllDummys();
     }
+
+    @GetMapping("/pagingDummys")
+    public List<Dummy> getPagingDummys(){
+        return dummyService.getPagingDummys();
+    }
+
 }

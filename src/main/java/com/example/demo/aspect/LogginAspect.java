@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogginAspect {
 
-    @Around("execution(* com.example.demo.service.DummyService.getDummy(..))")
+    @Around("execution(* com.example.demo.service..*(..))")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
 
-        Object proceed = joinPoint.proceed(); // 메서드 실행
+        Object proceed = joinPoint.proceed();
 
         long executionTime = System.currentTimeMillis() - start;
 

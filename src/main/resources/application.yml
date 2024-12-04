@@ -14,7 +14,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     show-sql: true
     open-in-view: false
     properties:
@@ -23,14 +23,13 @@ spring:
         cache:
           use_second_level_cache: true
           use_query_cache: true
-          region.factory_class: org.redisson.hibernate.RedissonRegionFactory
+          redisson:
+            fallback: true
+            config: redisson.yaml
+          region:
+            factory_class: org.redisson.hibernate.RedissonRegionFactory
         format_sql: true
-  cache:
-    type: redis
-  data:
-    redis:
-      host: localhost
-      port: 6379
+        generate_statistics: true
 
 logging:
   level:

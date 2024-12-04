@@ -36,9 +36,6 @@ dependencies {
 	// MySQL Connector
 	runtimeOnly 'mysql:mysql-connector-java:8.0.33'
 
-	// Spring Data Redis
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-
 	// Spring Boot Starter Cache
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 
@@ -53,18 +50,18 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	// 개발 도구
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+//	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 
 	// 테스트
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-	implementation 'org.redisson:redisson-hibernate-6:3.21.1'
+	// Redisson Hibernate 5.6 통합 모듈
+	implementation 'org.redisson:redisson-hibernate-6:3.38.1'
 
-	implementation 'org.redisson:redisson:3.21.1'
 
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
 
